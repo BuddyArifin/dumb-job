@@ -1,7 +1,4 @@
 node ('sdet-node-staging') {
-    timestamps {
-        wrap([$class: "AnsiColorBuildWrapper", "colorMapName": "XTerm", "defaultFg": 1, "defaultBg": 2]) {
-
             stage ('Running Example Tests') {
                 sh '''
                     export BUILD_NO = ${env.BUILD_NUMBER}
@@ -10,6 +7,4 @@ node ('sdet-node-staging') {
                     node capture-buildno.js
                 '''
             }
-        }
-    }
 }
